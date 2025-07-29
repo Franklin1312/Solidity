@@ -19,4 +19,25 @@ contract Simple{
         return favnum;
     }   
 
+
+    //uint256[] listOfFavNum;        // [73,40,90]  array
+    struct Person{
+        uint256 favoritenumber;
+        string name;
+    }
+    // static array
+    // Person[] public listOfPeople;
+
+    //dynamic array
+    Person[] public listOfPeople; //[]
+    mapping (string => uint256) public nameToFavNum;
+    // Person public myFriend = Person(73,"John"); //object of person; or Person({favoritenumber:73,name:"John"})
+    // Person public myFriend = Person({favoritenumber:89,name:"alex"});
+
+    function addPerson(string memory _name, uint256 _favoritenumber) public {
+        listOfPeople.push(Person(_favoritenumber,_name));
+        nameToFavNum[_name] = _favoritenumber;   //mapping[]
+            }
+    
+   
 }
