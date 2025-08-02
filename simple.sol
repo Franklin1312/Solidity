@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.8.30;   //solidity version  or >=0.8.30 <0.8.35 .... '^' represents all version above 30
+pragma solidity ^0.8.24;   //solidity version  or >=0.8.30 <0.8.35 .... '^' represents all version above 30
 
 contract Simple{
     //bool unit int address ntes
@@ -12,7 +12,7 @@ contract Simple{
    // bytes32 favbytes = "cat";  //only till 32    
     uint256 public favnum; //initialize as 0
 
-    function store(uint256 favoritenum) public{
+    function store(uint256 favoritenum) public virtual{
         favnum = favoritenum;
     }
     function retrieve() public view returns (uint256){  //view does not  allow write
@@ -38,6 +38,5 @@ contract Simple{
         listOfPeople.push(Person(_favoritenumber,_name));
         nameToFavNum[_name] = _favoritenumber;   //mapping[]
             }
-    
-   
+
 }
